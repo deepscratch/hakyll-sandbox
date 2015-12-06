@@ -7,8 +7,8 @@ env:
   global:
    - secure: "H7iAs3Dc9wbtq2SmF2+dTU+IILpy7tFmbn28IAc8dV2koe+HCvH7s8RsvS2W91KX3Eh+QcUx2O5oEG+c/+kgSsZPlO1Fny4WoNYmF9qg5demd73aDQyt4IyMFLeKNfHkmY9DgTKp92WjZkyw6H3MFxyriRR51rxr6a86gUxw8fipqVZ0SAZ42OIhsqCPbtqBvJ/LStUrZNprrjodytBB2XN5CQzM3EdL70fZQYOFlITyHUHPi0hYnXGgOQbiFGd+NDvWsqr2PilFLT79or2UJ2LDmkPEzivO1CZeM0bkEDdyTSA8rdtpCVxT6eMX2XJr4ChOQOjk56HcnDsVFc64h9eIAZPmVf9gQ6UrmYZszROWGi/QQiuaE1eSgw1hmGvXmag2RrNXfEeFDRq/THhw49xKrkDhbNbkDDhSeDRqLPWUVpCwiq4g1l61HosMq3WXPrG9mJIg6c0ZvZHvbEQ1XPUgVaCeVmz1Imkj2BlecE4s6cm8J59TkI6Et13TMrcaffo/mJYit1HFw3ra0lk7iK7LbL8xWpdQ0xxUru57hLplPm71MA6xlsPcxWt28010uBBe0G20IfXmjCgiB3ExVln3B0gd1RhlEWZr92wB3NCQ3b8DA5V/YhgnoZSQgHTCjOdRhecQD38zTe+79zZ+QC9oULDev+ehJekhWnmWPK4="
 install:
-  - cabal sandbox init
   - cabal install cabal-install
+  - cabal sandbox init
   - cabal install -j 'hakyll ==4.7.*'
 before_script:
   - cd _bin
