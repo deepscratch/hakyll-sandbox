@@ -9,7 +9,6 @@ env:
 install:
   - cabal sandbox init
   - cabal install -j 'hakyll ==4.7.*'
-  - cabal install -j --disable-documentation --disable-tests --reorder-goals
 before_script:
   - cd _bin
   - git checkout gh-pages
