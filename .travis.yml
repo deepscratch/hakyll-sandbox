@@ -14,12 +14,12 @@ before_script:
   - git checkout gh-pages
   - git pull origin gh-pages
   - cd ..
-  - rm -f /_bin/hakyll-sandbox.tar.gz
-script: tar -zcf  ./_bin/hakyll-sandbox.tar.gz ./.cabal-sandbox
+  - rm -f /_bin/hakyll-sandbox.tar.xz
+script: tar -Jcf  ./_bin/hakyll-sandbox.tar.xz ./.cabal-sandbox
 after_script:
   - cd _bin
   - git status
-  - git add hakyll-sandbox.tar.gz
+  - git add hakyll-sandbox.tar.xz
   - git config --global user.email "$GH_EMAIL"
   - git config --global user.name "$GH_NAME"
   - git commit -m "snapshot $(date '+%m/%d/%y %H:%M')"
