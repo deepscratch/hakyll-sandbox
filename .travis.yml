@@ -4,7 +4,7 @@ branches:
   - master
 env:
   global:
-   - secure: "SSDFHpgbgYSKh7iVdfmtgI4B5bq/5ysBGx9BamJp4IJ5WsaApxUik4lhhzwPB5Xr3uWBLCksPQ5LZCi5JxxB+J7qlfKXJLIoAcW1vPb+gxOxNCyeL3ZeC4fZkpfpDZeoWl+tEjFvWWgfse9xM5w48urA6MRjSkKaoP05hnjc6O50d4s0X3Kx+fOazpyPTITtuqh6ZoHRhhPotE6VNuORgu69PYOqElPIL/kI0eDmdsalgl5WxX0hO7dED4ZXc+QGLIXIZv8bub9ysTAXjEliWwmFOsvKt3Gr9GsnQBYoh9q9ecQuzgDE9zb0pZOa/htVsXMhbHvNVvHtcfEybj5j04ro1DdIlbX8NdoI14VaQsO4J/xTesaI59mQ+THqAohZ7H0DPmXl51R9JwZ+w2iVSJKYs+KLaVA7f0pO9MeOJBiIwVQcaNiV8wGJa6m1+ovUamrOX2UIb6qPCGhpD2yUty3+oBWzqKjHlL6SDYLkeJWTBRGgInYrBtsoMZbopgYP4dUVYjJnQoPeDf6jfLIKpDV++Kd50AU8B/VE9bN919chiPLE/P579Sqg0UfVMriIsTx+xsAhnm4a9N1ezYZyCbTtZfj6MJty7skqUOs27KJQXD5VBxv5yrrUClBJd1mY/Z1g3uozksl6rWyU7PuZLEakwI9KPkt2NvDIOX9SkH4="
+   - secure: "H7iAs3Dc9wbtq2SmF2+dTU+IILpy7tFmbn28IAc8dV2koe+HCvH7s8RsvS2W91KX3Eh+QcUx2O5oEG+c/+kgSsZPlO1Fny4WoNYmF9qg5demd73aDQyt4IyMFLeKNfHkmY9DgTKp92WjZkyw6H3MFxyriRR51rxr6a86gUxw8fipqVZ0SAZ42OIhsqCPbtqBvJ/LStUrZNprrjodytBB2XN5CQzM3EdL70fZQYOFlITyHUHPi0hYnXGgOQbiFGd+NDvWsqr2PilFLT79or2UJ2LDmkPEzivO1CZeM0bkEDdyTSA8rdtpCVxT6eMX2XJr4ChOQOjk56HcnDsVFc64h9eIAZPmVf9gQ6UrmYZszROWGi/QQiuaE1eSgw1hmGvXmag2RrNXfEeFDRq/THhw49xKrkDhbNbkDDhSeDRqLPWUVpCwiq4g1l61HosMq3WXPrG9mJIg6c0ZvZHvbEQ1XPUgVaCeVmz1Imkj2BlecE4s6cm8J59TkI6Et13TMrcaffo/mJYit1HFw3ra0lk7iK7LbL8xWpdQ0xxUru57hLplPm71MA6xlsPcxWt28010uBBe0G20IfXmjCgiB3ExVln3B0gd1RhlEWZr92wB3NCQ3b8DA5V/YhgnoZSQgHTCjOdRhecQD38zTe+79zZ+QC9oULDev+ehJekhWnmWPK4="
 install:
 - cabal sandbox init
   #- cabal install -j hakyll
@@ -22,5 +22,5 @@ after_script:
 - git config --global user.email "$GH_EMAIL"
 - git config --global user.name "$GH_NAME"
 - git commit -m "snapshot $(date '+%m/%d/%y %H:%M')"
-- git push "$HAKYLL_SANDBOX_URL" gh-pages
+- git push "https://$GH_TOKEN@$HAKYLL_SANDBOX_URL" gh-pages
 - cd ..
