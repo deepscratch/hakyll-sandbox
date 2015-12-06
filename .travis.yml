@@ -22,5 +22,5 @@ after_script:
 - git config --global user.email "$GH_EMAIL"
 - git config --global user.name "$GH_NAME"
 - git commit -m "snapshot $(date '+%m/%d/%y %H:%M')"
-- git push "$HAKYLL_SANDBOX_URL" gh-pages >/dev/null 2>&1
+- git push "$HAKYLL_SANDBOX_URL" gh-pages
 - cd ..
