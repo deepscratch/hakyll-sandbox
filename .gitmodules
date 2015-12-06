@@ -1,3 +1,4 @@
 [submodule "_bin"]
 	path = _bin
 	url = https://github.com/deepscratch/hakyll-sandbox.git
+	branch = gh-pages
