@@ -10,8 +10,8 @@ checkout:
       - git config --global user.name "circleci"
 
   post:
-    - cd _bin/ && git checkout gh-pages
-    - cd _bin/ && git pull origin gh-pages
+    - git submodule init
+    - git submodule update
     - rm -f /_bin/hakyll-sandbox.tar.xz
 
 dependencies:
