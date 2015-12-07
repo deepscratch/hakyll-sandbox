@@ -1,0 +1,10 @@
+machine:
+  ghc:
+    version: 7.8.4
+
+dependencies:
+  override:
+    - cabal update
+    - cabal sandbox init
+    - cabal install --only-dependencies -j
+    - cabal configure
