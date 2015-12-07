@@ -9,10 +9,8 @@ checkout:
       - git config --global user.email "circleci@circleci"
       - git config --global user.name "circleci"
   post:
-    - cd _bin
-    - git checkout gh-pages
-    - git pull origin gh-pages
-    - cd ..
+    - cd _bin/ && git checkout gh-pages
+    - cd _bin/ && git pull origin gh-pages
     - rm -f /_bin/hakyll-sandbox.tar.xz
 
 dependencies:
