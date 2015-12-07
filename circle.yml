@@ -8,6 +8,7 @@ checkout:
   pre:
       - git config --global user.email "circleci@circleci"
       - git config --global user.name "circleci"
+
   post:
     - cd _bin/ && git checkout gh-pages
     - cd _bin/ && git pull origin gh-pages
