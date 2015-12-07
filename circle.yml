@@ -17,7 +17,7 @@ dependencies:
     - cabal update
     - cabal sandbox init
     # - cabal install --only-dependencies -j
-    - cabal configure
+    # - cabal configure
 
 deployment:
   production:
