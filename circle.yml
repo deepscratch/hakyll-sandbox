@@ -1,10 +1,29 @@
 machine:
+  timezone:
+    Asia/Shanghai
   ghc:
     version: 7.8.4
+
+checkout:
+  post:
+    - cd _bin
+    - git checkout gh-pages
+    - git pull origin gh-pages
+    - cd ..
+    - rm -f /_bin/hakyll-sandbox.tar.xz
 
 dependencies:
   override:
     - cabal update
     - cabal sandbox init
-    - cabal install --only-dependencies -j
+    # - cabal install --only-dependencies -j
     - cabal configure
+
+deployment:
+  override:
+    - tar -Jcf  ./_bin/hakyll-sandbox.tar.xz ./.cabal-sandbox
+    - git add ./_bin/hakyll-sandbox.tar.xz
+    - git config --global user.email "circleci@circleci"
+    - git config --global user.name "circleci"
+    - git commit -m "snapshot $(date '+%m/%d/%y %H:%M')"
+    - git push origin gh-pages
