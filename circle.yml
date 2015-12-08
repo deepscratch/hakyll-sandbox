@@ -19,7 +19,7 @@ dependencies:
   override:
     - cabal update
     - cabal sandbox init
-    - cabal install --only-dependencies -j hakyll
+    - cabal install -j hakyll
     - cabal configure
 
 deployment:
