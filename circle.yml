@@ -19,8 +19,8 @@ dependencies:
   override:
     - cabal update
     - cabal sandbox init
-    # - cabal install --only-dependencies -j
-    # - cabal configure
+    - cabal install --only-dependencies -j hakyll
+    - cabal configure
 
 deployment:
   production:
